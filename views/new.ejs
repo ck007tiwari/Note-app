@@ -6,40 +6,63 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>New Student</title>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
    <style>
       body {
-         padding: 2%;
          color: aliceblue;
          background-color: rgba(57, 75, 80, 0.816);
       }
-      ul{
+
+      #main {
          display: flex;
-         display:flexbox
+         justify-content: center;
       }
-  
    </style>
 </head>
 
 <body>
-  <h1>Add New Note</h1>
-   <form action="/notes" method="POST">
-      <div>
-         <label for="title"> Note Title:</label> <br>
-         <input type="text" placeholder=" note title" id="title" name="title">
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+         <div class="navbar-nav">
+            <a class="nav-link active" href="/notes">All Notes <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/new"> Add New Note</a>
+         </div>
       </div>
-      <br>
-      <div>
-         <label for="dec"> Description:</label> <br>
-         <textarea name="description" id="dec" cols="30" rows="5"></textarea>
-      </div>
-      <button class="btn btn-success"> Add Note</button>
-   </form>
-<hr>
-<a href="/notes" class="btn btn-danger">Cancle and Back to Notes</a> <br> <br>
+   </nav>
+   <div id="body">
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+      <h1>Add New Note</h1>
+      <div id="main">
+         <form action="/notes" method="POST">
+            <div class="form-row d-flex flex-column">
+               <div>
+                  <label for="validationServer01">Note Title</label>
+                  <input type="text" class="form-control is-valid" id="validationServer01" required name="title">
+               </div>
+               <div>
+                  <label for="validationServer02">Discription</label>
+                  <textarea class="form-control is-valid" id="validationServer02" name="description" cols="30" rows="5"
+                     required></textarea>
+               </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Add Note</button>
+            <a href="/notes" class="btn btn-danger">Cancle and Back to Notes</a> <br> <br>
+         </form>
+      </div>
+
+   </div>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+   </script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+   </script>
 </body>
 
 </html>
