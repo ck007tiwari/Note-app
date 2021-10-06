@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Editing Student</title>
+</head>
+
+<body>
+   <h1>DPL Ashok vihar</h1>
+   <h3> Editing  New student </h3>
+   <form action="/students/<%=student._id%>?_method=PUT" method="POST">
+
+      <label for="name">Enter Your Name</label>
+      <input type="text" placeholder="Name" id="name" name="name" value="<%= student.name %>">
+<br>
+      <label for="card" >Enter Your Card No : </label>
+      <input type="number" placeholder="Card No" id="card" name="cardNo" value="<%= student.cardNo %>">
+      <br>
+      <br>
+      <label for="pur">Purpose of Study</label>
+      <select name="purpose" id="pur" ">
+         <% for(let purpos of purpose){ %> 
+            <option value="<%=purpos%>"><%=purpos%></option>
+           <% } %> 
+      </select>
+      <label for="for">Field </label>
+      <input type="text" placeholder="Competiton Field" id="for" name="for" value="<%= student.for %>">
+      <br>
+      <br> 
+      <label for="join">Joining Year</label>
+      <input type="number" placeholder="Join" id="join" name="join"value="<%= student.join %>" >
+      <label for="achi"> Target Achived :</label>
+      <select name="achived" id="achi">
+         <% for(let goal of goals){ %> 
+            <option value="<%=goal%>"<%= student.achived === goal ? 'selected': '' %> ><%=goal%></option>
+            <!-- Selecting the preexisting text in Achived section -->
+           <% } %> 
+      </select>
+      <br>
+      <button>Submit</button>
+   </form>
+<a href="/students/<%= student._id %> ">Cancle and Back Home page</a>
+</body>
+
+</html>
